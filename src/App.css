@@ -1,42 +1,129 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --text-color: #5d5eb2;
+  --bg-color: rgba(162, 194, 245, 0.4);
+}
+
+body {
+  font-family: "Vazirmatn", sans-serif;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+}
+
+.main-container {
+  font-family: "Vazirmatn", sans-serif;
+  width: max-content;
+  padding: 8rem;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+.tab-header {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.tab-header li {
+  flex: 1;
+  cursor: pointer;
+  padding: 1rem;
+  border: 2px solid var(--text-color);
+  text-align: center;
+  border-radius: 2rem 2rem 0 0;
+  font-size: 2rem;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  width: 80rem;
+  border: 2px solid var(--text-color);
+  border-radius: 0 0 2rem 2rem;
   padding: 2rem;
+  gap: 2rem;
+}
+
+.tab-content {
+  padding: 2rem;
+  min-height: 25rem;
+  border: 2px solid var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 1rem;
+}
+
+.tab-content img {
+  max-width: 31rem;
+  max-height: 20rem;
+  width: 100%;
+}
+
+.tab-content p {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.active {
+  background: var(--text-color);
+
+  color: #fff;
+  font-weight: 600;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1000px) {
+  .main-container {
+    gap: 2rem;
+    padding: 1rem;
+    width: 95%;
+    margin: 5rem auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 3rem;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .tab-header {
+    flex-wrap: wrap;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .tab-content {
+    gap: 2rem;
+    min-height: 35rem;
+  }
+  .tab-header li {
+    font-size: 1.6rem;
+  }
 
-.read-the-docs {
-  color: #888;
+  .tab-container {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .tab-content img {
+    max-width: 150px;
+  }
+
+  .tab-content p {
+    font-size: 1.6rem;
+  }
 }
